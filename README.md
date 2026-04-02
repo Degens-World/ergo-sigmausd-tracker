@@ -2,9 +2,7 @@
 
 ## Live Demo
 
-**[https://ad-ergo-sigmausd-tracker-1775098024.vercel.app](https://ad-ergo-sigmausd-tracker-1775098024.vercel.app)**
-
-Live Ergo stablecoin reserve dashboard — monitor the SigmaUSD protocol's reserve ratio, SigUSD/SigRSV prices, and on-chain bank box stats in real-time.
+**[https://ad-ergo-sigmausd-tracker-1775099463035.vercel.app](https://ad-ergo-sigmausd-tracker-1775099463035.vercel.app)**
 
 ## Features
 
