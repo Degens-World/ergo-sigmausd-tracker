@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SigmaUSD Tracker — Ergo Stablecoin Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <span class="sigma">Σ</span>
+      <div>
+        <h1>SigmaUSD Tracker</h1>
+        <p class="tagline">Ergo Stablecoin Reserve Dashboard</p>
+      </div>
+    </div>
+    <div class="refresh-info">
+      <span id="last-updated">Fetching data…</span>
+      <button id="refresh-btn" onclick="loadAll()">⟳ Refresh</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Reserve Health Gauge -->
+    <section class="card gauge-card">
+      <h2>Reserve Ratio</h2>
+      <div class="gauge-wrap">
+        <canvas id="gaugeCanvas" width="300" height="180"></canvas>
+        <div class="gauge-center">
+          <span id="reserve-ratio-val">—</span>
+          <small>reserve ratio</small>
+        </div>
+      </div>
+      <div class="health-badge" id="health-badge">Loading…</div>
+      <p class="gauge-note">Healthy: &gt;400% · Warning: 200–400% · Critical: &lt;200%</p>
+    </section>
+
+    <!-- Key Stats -->
+    <section class="card stats-card">
+      <h2>Live Stats</h2>
+      <div class="stats-grid">
+        <div class="stat-box">
+          <span class="stat-label">SigUSD Price</span>
+          <span class="stat-value" id="sigusd-price">—</span>
+          <span class="stat-sub">ERG per SigUSD</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">SigRSV Price</span>
+          <span class="stat-value" id="sigrsv-price">—</span>
+          <span class="stat-sub">ERG per SigRSV</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">ERG in Reserve</span>
+          <span class="stat-value" id="reserve-erg">—</span>
+          <span class="stat-sub">ERG</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">SigUSD Supply</span>
+          <span class="stat-value" id="sigusd-supply">—</span>
+          <span class="stat-sub">SigUSD circulating</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">SigRSV Supply</span>
+          <span class="stat-value" id="sigrsv-supply">—</span>
+          <span class="stat-sub">SigRSV circulating</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">ERG Price (USD)</span>
+          <span class="stat-value" id="erg-price-usd">—</span>
+          <span class="stat-sub">via CoinGecko</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reserve History Chart -->
+    <section class="card chart-card">
+      <h2>Reserve Ratio History</h2>
+      <div class="chart-wrap">
+        <canvas id="reserveChart"></canvas>
+      </div>
+    </section>
+
+    <!-- Oracle Info -->
+    <section class="card oracle-card">
+      <h2>Oracle Commentary</h2>
+      <div id="oracle-text" class="oracle-text">Reading the reserve crystal ball…</div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Data from <a href="https://api.ergoplatform.com" target="_blank">Ergo Explorer</a> &amp; <a href="https://coingecko.com" target="_blank">CoinGecko</a> · SigmaUSD protocol by <a href="https://sigmausd.io" target="_blank">sigmausd.io</a></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
