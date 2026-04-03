@@ -2,7 +2,7 @@
 
 ## Live Demo
 
-**[https://ad-ergo-sigmausd-tracker-1775098024.vercel.app)**
+**[https://ad-ergo-sigmausd-tracker-1775099463.vercel.app)**
 
 ## Features
 
